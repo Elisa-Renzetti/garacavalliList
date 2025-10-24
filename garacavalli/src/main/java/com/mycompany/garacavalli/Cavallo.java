@@ -5,6 +5,7 @@
 package com.mycompany.garacavalli;
 
 import java.util.List;
+import java.math.*;
 
 public class Cavallo extends Thread {
     private final String nome;
@@ -27,13 +28,21 @@ public class Cavallo extends Thread {
             metriPercorsi += passo;
             System.out.println(nome + " ha percorso " + metriPercorsi + " metri");
 
-           
             if (metriPercorsi >= distanza) {
                 synchronized (classifica) {
                     classifica.add(nome);
                 }
                 System.out.println(nome + " ha tagliato il traguardo!");
             }
+            azzoppa();
+        }
+    }
+
+    public void azzoppa(){
+        double rand = Math.random();
+        int rundem = (int)rand;
+        if(rundem % 3 == 1){
+            this.interrupt();
         }
     }
 }
