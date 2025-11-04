@@ -7,9 +7,9 @@ import javax.swing.*;
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class Gestoregaracavalli {
 
-    public static void Gestoregaracavalli(String[] args) {
+    public static void Main(String[] args) {
         Scanner tastiera = new Scanner(System.in);
 
         System.out.print("Inserisci la lunghezza del percorso (in metri): ");
